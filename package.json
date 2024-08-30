@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev"
+    "dev": "npm run dev",
+    "vercel-build": "yum install libuuid-devel libmount-devel zlib && cp /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/",
+    "start": "webpack --config webpack.config.dev.js",
+    "start:dev": "webpack --config webpack.config.dev.js && node ./dist/server.js",
+    "build:dev": "webpack --config webpack.config.dev.js"
               },
   "author": "",
   "license": "MIT",
